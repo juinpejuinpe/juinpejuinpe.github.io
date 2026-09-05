@@ -1,0 +1,78 @@
+---
+siteName: 香淚月
+siteNameEn: Scentmoon
+role: 多風格網絡作者
+tagline: 擅長在地獄煉造童話，在天堂誦唱深淵。
+avatarImage: ""
+bio:
+  - "詭異的筆名有一個不可告人的來源，目前主要筆耕於網絡小說平台 Penana。"
+  - "風格偏向多姿多彩，走自己的單程路，遊走在流行文學與傳統文學之間。"
+  - "正努力建構故事共同世界觀——【日曦】。"
+  - "🌘 創作始於 2019.10.30"
+socials:
+  - label: Instagram
+    url: "https://www.instagram.com/scent._.moon/"
+    icon: instagram
+  - label: Facebook
+    url: "https://facebook.com/scentmoonhostel/"
+    icon: facebook
+  - label: Penana
+    url: "https://www.penana.com/user/78808"
+    icon: penana
+buttons:
+  - label: 合作諮詢
+    href: "/contact/"
+  - label: 已出版作品及經歷
+    href: "/works/"
+  - label: Instagram
+    href: "https://www.instagram.com/scent._.moon/"
+    external: true
+  - label: Threads
+    href: "https://www.threads.com/@scent._.moon"
+    external: true
+  - label: 更多作品（Blogger：傾榼閣）
+    href: "https://scentmoonpinnari.blogspot.com/"
+    external: true
+  - label: Google Form 測驗
+    href: "https://forms.gle/hYDHgvbBFsgiSJC27"
+    external: true
+serials:
+  - title: 話說有人建了關住一億人的冷凍庫
+    genre: 科幻權謀長篇
+    status: 連載中
+    note: Penana 全站同步更新
+    tags:
+      - 科幻
+      - 權謀
+      - 長篇
+    url: "https://www.penana.com/story/76927"
+publications:
+  - collection: 大頭菜文藝月刊
+    entries:
+      - issue: 2022年5月號 第77期
+        title: melancholic的流量密碼
+      - issue: 2022年6月號 第78期
+        title: 5.45mm
+      - issue: 2022年10月號 第80期
+        title: 世界謊言
+  - collection: 聲韻詩刊
+    entries:
+      - issue: 第69期
+        title: 蕪
+      - issue: 第71期
+        title: 致項鍊
+  - collection: Penana
+    entries:
+      - note: 2022年【暑假日更大挑戰】全更組第三名
+        title: 話說有人建了關住一億人的冷凍庫
+  - collection: 盒誌
+    entries:
+      - issue: 2021年《圍爐》
+        title: Zero.begin
+contact:
+  heading: 合作諮詢
+  intro: 如有合作、邀稿、插畫或其他想法，歡迎透過 Instagram 私訊聯絡，來訊時簡單說明來意即可。
+  ctaLabel: 到 Instagram 私訊
+  ctaUrl: "https://ig.me/m/scent._.moon"
+  note: 回覆需時，感謝你的耐心。
+---

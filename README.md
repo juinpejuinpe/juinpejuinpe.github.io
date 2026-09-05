@@ -1,62 +1,33 @@
-# Scentmoon
+# 香淚月 scentmoon.com
 
-A personal writing and blog site built with [Next.js](https://nextjs.org)
-(React), statically exported and hosted on GitHub Pages.
+個人網站，以 Next.js（React）靜態輸出並部署於 GitHub Pages。
 
-## Writing a post
+## 編輯網站文字
 
-Add a Markdown file to `content/posts/`. The filename becomes the URL slug.
+首頁的所有文字（自我介紹、按鈕、連結、網絡連載小說與已出版作品記錄）都集中在
+[`content/site.yaml`](content/site.yaml)。直接在 GitHub 上修改這個檔案並提交，
+網站便會自動重建更新。
 
-```md
----
-title: "My new post"
-date: 2026-09-10
-excerpt: "A one or two sentence summary shown on the archive page."
-tags:
-  - writing
-  - essay
----
+例如想更換自我介紹：
 
-Your words here. Markdown is supported, including **bold**, *italics*,
-[links](https://example.com), images, and `code`.
-```
+1. 開啟 `content/site.yaml`
+2. 修改 `bio` 下的文字行
+3. 按下 Commit changes
 
-The site rebuilds automatically on every push to `main`.
-
-## Local development
+## 本地開發
 
 ```bash
 pnpm install
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+## 網站結構
 
-## Production build
+- `/` — 主頁（個人簡介、平台連結、網絡連載小說）
+- `/works/` — 已出版作品及經歷
+- `/contact/` — 合作諮詢
 
-```bash
-pnpm build
-```
+## 部署
 
-The fully static site is written to `out/`, ready for any static host.
-
-## Customizing the site
-
-- Site name, description, and URL live in `src/lib/site.ts`.
-- The header/footer layout is in `src/app/layout.tsx`.
-- Page copy is in `src/app/page.tsx` and `src/app/about/`.
-
-## Deployment
-
-Pushes to `main` trigger `.github/workflows/deploy.yml`, which exports the
-site and publishes it to GitHub Pages.
-
-To use a custom domain:
-
-1. Add your domain (e.g. `example.com`) in the repository's Pages settings,
-   or create `public/CNAME` containing just your domain.
-2. At your DNS provider, point the domain at GitHub Pages:
-   - `A` records for the apex: `185.199.108.153`, `185.199.109.153`,
-     `185.199.110.153`, `185.199.111.153`
-   - a `CNAME` from `www` to `juinpejuinpe.github.io`
-3. Update `SITE_URL` in `src/lib/site.ts`.
+每次 push 到 `main`，GitHub Actions 便會自動建置並發布到
+https://scentmoon.com。

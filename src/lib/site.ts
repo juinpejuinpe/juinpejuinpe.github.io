@@ -1,6 +1,6 @@
-// Site-wide identity. Update these once you decide the final name and domain.
-export const SITE_NAME = "Scentmoon";
-export const SITE_DESCRIPTION =
-  "A home for essays, stories, and notes from a writer's desk.";
+// Site-wide identity used in metadata and page titles.
+export const SITE_NAME = "香淚月";
+export const SITE_NAME_EN = "Scentmoon";
+export const SITE_DESCRIPTION = "擅長在地獄煉造童話，在天堂誦唱深淵。";
 
 export const SITE_URL = "https://scentmoon.com";

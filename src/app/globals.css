@@ -177,22 +177,6 @@ button {
   letter-spacing: 0.12em;
 }
 
-.tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4em;
-  padding: 0.34em 0.95em;
-  border: 1px solid rgba(178, 74, 67, 0.5);
-  border-radius: 999px;
-  color: #dd8c85;
-  font-family: var(--font-ui);
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  background: rgba(178, 74, 67, 0.08);
-  white-space: nowrap;
-}
-
 .sec {
   position: relative;
   padding: clamp(4.6rem, 10vw, 8.8rem) 0;
@@ -334,6 +318,7 @@ button {
   font-family: var(--font-ui);
   font-size: 0.84rem;
   letter-spacing: 0.14em;
+  line-height: 1;
   transition: color 0.35s var(--ease-out-quart);
 }
 
@@ -879,7 +864,7 @@ button {
 }
 
 .feat-meta {
-  margin-top: 2.6rem;
+  margin-top: 1.25rem;
   align-self: start;
 }
 
@@ -928,18 +913,6 @@ button {
 .feat-img {
   width: 100%;
   height: auto;
-  aspect-ratio: 1;
-  object-fit: cover;
-}
-
-.feat-caption {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding-top: 0.7rem;
-  color: var(--paper-faint);
-  font-size: 0.62rem;
-  letter-spacing: 0.16em;
 }
 
 .feat-quote {
@@ -981,13 +954,8 @@ button {
     grid-column: 1 / span 5;
   }
 
-  .feat-meta {
-    grid-column: 6 / span 2;
-    margin-top: 0;
-  }
-
   .feat-cover {
-    grid-column: 8 / span 5;
+    grid-column: 7 / span 6;
     margin-top: 0;
   }
 
@@ -1084,7 +1052,6 @@ button {
 }
 
 .label:hover {
-  transform: translateY(-0.55rem);
   box-shadow:
     0 40px 66px -26px rgba(0, 0, 0, 0.86),
     0 0 0 1px rgba(226, 200, 144, 0.2),
@@ -1786,4 +1753,43 @@ button {
   .trace-item {
     margin-bottom: 0.6rem;
   }
+}
+
+/* ------------------------------------------------------------------
+   Nav refinements — centred name on fog glass, no border
+------------------------------------------------------------------ */
+
+.nav-inner {
+  justify-content: center;
+  height: 3.9rem;
+  border-bottom: 0;
+  background:
+    radial-gradient(
+      120% 200% at 50% -120%,
+      rgba(201, 169, 106, 0.09),
+      transparent 62%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(6, 7, 12, 0.68),
+      rgba(10, 12, 19, 0.28)
+    );
+  -webkit-backdrop-filter: blur(22px) saturate(1.7);
+  backdrop-filter: blur(22px) saturate(1.7);
+  box-shadow: inset 0 1px 0 rgba(236, 229, 211, 0.05);
+}
+
+.atelier-logo {
+  gap: 0;
+  letter-spacing: 0.5em;
+  text-indent: 0.5em; /* keep the tracked name optically centred */
+}
+
+.hero-actions {
+  align-items: center;
+}
+
+.hero-actions .btn,
+.hero-actions .link-underline {
+  align-self: center;
 }

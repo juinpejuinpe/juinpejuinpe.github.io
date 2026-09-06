@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -39,28 +39,65 @@ export default function AtelierSite({ site }: AtelierSiteProps) {
       /* ---- page-load choreography: nav, then the vertical poem ---- */
       const load = gsap.timeline({ defaults: { ease: "expo.out" } });
       load
-        .from(".nav-inner", { y: -18, opacity: 0, duration: 0.7 }, 0)
+        .from(
+          ".nav-inner",
+          { y: -18, opacity: 0, duration: 0.7, clearProps: "transform,opacity" },
+          0
+        )
         .from(
           ".hero-char",
-          { yPercent: 118, duration: 1.3, stagger: 0.055 },
+          {
+            yPercent: 118,
+            duration: 1.3,
+            stagger: 0.055,
+            clearProps: "transform",
+          },
           0.12
         )
         .from(
           ".poem-spine",
-          { scaleY: 0, transformOrigin: "top center", duration: 1.5 },
+          {
+            scaleY: 0,
+            transformOrigin: "top center",
+            duration: 1.5,
+            clearProps: "transform",
+          },
           0.3
         )
-        .from(".hero-kicker", { y: 12, opacity: 0, duration: 0.6 }, 0.72)
-        .from(".hero-subline", { y: 18, opacity: 0, duration: 0.9 }, 0.84)
+        .from(
+          ".hero-kicker",
+          { y: 12, opacity: 0, duration: 0.6, clearProps: "transform,opacity" },
+          0.72
+        )
+        .from(
+          ".hero-subline",
+          { y: 18, opacity: 0, duration: 0.9, clearProps: "transform,opacity" },
+          0.84
+        )
         .from(
           ".hero-actions .btn, .hero-actions .link-underline",
-          { y: 16, opacity: 0, stagger: 0.09, duration: 0.7 },
+          {
+            y: 16,
+            opacity: 0,
+            stagger: 0.09,
+            duration: 0.7,
+            clearProps: "transform,opacity",
+          },
           0.98
         )
-        .from(".hero-foot", { opacity: 0, duration: 0.8 }, 1.1)
+        .from(
+          ".hero-foot",
+          { opacity: 0, duration: 0.8, clearProps: "opacity" },
+          1.1
+        )
         .from(
           ".hero-video-frame",
-          { opacity: 0, y: 46, duration: 1.1 },
+          {
+            opacity: 0,
+            y: 46,
+            duration: 1.1,
+            clearProps: "transform,opacity",
+          },
           1.05
         );
 
@@ -184,13 +221,6 @@ export default function AtelierSite({ site }: AtelierSiteProps) {
     };
   }, []);
 
-  const handleMenuChange = useCallback((open: boolean) => {
-    const lenis = lenisRef.current;
-    if (!lenis) return;
-    if (open) lenis.stop();
-    else lenis.start();
-  }, []);
-
   useEffect(() => {
     const float = document.querySelector<HTMLElement>(".follow-float");
     if (!float) return;
@@ -243,11 +273,6 @@ export default function AtelierSite({ site }: AtelierSiteProps) {
     <div ref={rootRef} className="atelier">
       <Nav
         name={site.siteName}
-        handle={follow.handle}
-        followLabel={follow.label}
-        followUrl={follow.url}
-        onNavigate={scrollTo}
-        onMenuChange={handleMenuChange}
       />
 
       <main id="main">
@@ -261,7 +286,6 @@ export default function AtelierSite({ site }: AtelierSiteProps) {
                 <span className="eyebrow-no">01</span>
                 {book.eyebrow}
               </p>
-              <span className="tag">{book.tag}</span>
             </div>
 
             <h2 className="feat-title" id="book-title" data-lines>
@@ -303,25 +327,6 @@ export default function AtelierSite({ site }: AtelierSiteProps) {
                 </p>
               </div>
 
-              <aside className="feat-meta mono">
-                <div className="meta-row">
-                  <span className="meta-label">價格</span>
-                  <span className="meta-value">{book.price}</span>
-                </div>
-                <div className="meta-row">
-                  <span className="meta-label">出版</span>
-                  <span className="meta-value">{book.publisher}</span>
-                </div>
-                <div className="meta-row">
-                  <span className="meta-label">產地</span>
-                  <span className="meta-value">{book.provenance}</span>
-                </div>
-                <div className="meta-row">
-                  <span className="meta-label">年份</span>
-                  <span className="meta-value">{book.crafted}</span>
-                </div>
-              </aside>
-
               <figure className="feat-cover" data-cover>
                 <div className="feat-frame">
                   {/* eslint-disable-next-line @next/next/no-img-element -- static export with unoptimized images */}
@@ -333,10 +338,24 @@ export default function AtelierSite({ site }: AtelierSiteProps) {
                     className="feat-img"
                   />
                 </div>
-                <figcaption className="feat-caption mono">
-                  <span>{book.publisher}</span>
-                  <span>{book.price}</span>
-                </figcaption>
+                <div className="feat-meta mono">
+                  <div className="meta-row">
+                    <span className="meta-label">價格</span>
+                    <span className="meta-value">{book.price}</span>
+                  </div>
+                  <div className="meta-row">
+                    <span className="meta-label">出版</span>
+                    <span className="meta-value">{book.publisher}</span>
+                  </div>
+                  <div className="meta-row">
+                    <span className="meta-label">產地</span>
+                    <span className="meta-value">{book.provenance}</span>
+                  </div>
+                  <div className="meta-row">
+                    <span className="meta-label">年份</span>
+                    <span className="meta-value">{book.crafted}</span>
+                  </div>
+                </div>
               </figure>
             </div>
 

@@ -8,8 +8,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
  * Full-moon photo shaded by a canvas phase shader.
  *
  * Phase starts at today's real lunar phase (approximate synodic formula) and
- * advances smoothly with scroll progress, so the same moon waxes and wanes as
- * the reader moves down the page. Reduced motion keeps it at today's phase.
+ * advances smoothly as the hero itself scrolls out of view, finishing one full
+ * synodic cycle exactly when the hero section is off the page. Reduced motion
+ * keeps it at today's phase.
  */
 
 const SYNODIC_MS = 29.530588853 * 86_400_000;
@@ -90,6 +91,7 @@ export default function MoonPhase() {
     const height = canvas.height;
     const image = new Image();
     image.src = MOON_SRC;
+    const hero = canvas.closest<HTMLElement>(".hero");
 
     let scrollTrigger: ScrollTrigger | null = null;
     let lastDrawn = -1;
@@ -106,9 +108,11 @@ export default function MoonPhase() {
       if (reduced) return;
 
       gsap.registerPlugin(ScrollTrigger);
+      if (!hero) return;
       scrollTrigger = ScrollTrigger.create({
-        start: 0,
-        end: "max",
+        trigger: hero,
+        start: "top top",
+        end: "bottom top",
         onUpdate: (self) => {
           const phase = (realPhase() + self.progress) % 1;
           const delta = Math.abs(phase - lastDrawn);

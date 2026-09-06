@@ -221,25 +221,6 @@ export default function AtelierSite({ site }: AtelierSiteProps) {
     };
   }, []);
 
-  useEffect(() => {
-    const float = document.querySelector<HTMLElement>(".follow-float");
-    if (!float) return;
-
-    gsap.registerPlugin(ScrollTrigger);
-    float.classList.toggle(
-      "is-visible",
-      window.scrollY > window.innerHeight * 0.8
-    );
-    const trigger = ScrollTrigger.create({
-      start: () => window.innerHeight * 0.8,
-      end: "max",
-      onUpdate: (self) => {
-        float.classList.toggle("is-visible", self.scroll() > 0);
-      },
-    });
-    return () => trigger.kill();
-  }, []);
-
   const scrollTo = (href: string) => {
     const isTop = href === "#top";
     const target = isTop
@@ -646,16 +627,6 @@ export default function AtelierSite({ site }: AtelierSiteProps) {
         </p>
       </footer>
 
-      <a
-        href={follow.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="follow-float"
-        aria-label={follow.label}
-      >
-        <span>{follow.label}</span>
-        <ArrowUpRightGlyph className="follow-float-arrow" />
-      </a>
     </div>
   );
 }

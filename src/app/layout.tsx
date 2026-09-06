@@ -7,18 +7,28 @@ import "@fontsource/noto-sans-tc/400.css";
 import "@fontsource/noto-sans-tc/500.css";
 import "@fontsource/ibm-plex-mono/400.css";
 import "@fontsource/ibm-plex-mono/500.css";
+import "@fontsource/fraunces/400.css";
+import "@fontsource/fraunces/600.css";
+import "@fontsource/fraunces/400-italic.css";
 import "./globals.css";
-import { SITE_DESCRIPTION, SITE_NAME, SITE_NAME_EN, SITE_URL } from "@/lib/site";
+import "./moonmap.css";
+import {
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_NAME_EN,
+  SITE_TAGLINE,
+  SITE_URL,
+} from "@/lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} Scentmoon｜把淚釀成香的人`,
+    default: `${SITE_NAME} Scentmoon｜${SITE_TAGLINE}`,
     template: `%s｜${SITE_NAME} Scentmoon`,
   },
   description: SITE_DESCRIPTION,
   openGraph: {
-    title: `${SITE_NAME} Scentmoon｜把淚釀成香的人`,
+    title: `${SITE_NAME} Scentmoon｜${SITE_TAGLINE}`,
     description: SITE_DESCRIPTION,
     url: SITE_URL,
     siteName: `${SITE_NAME} ${SITE_NAME_EN}`,
@@ -34,7 +44,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0a0b10",
+  themeColor: "#060816",
   colorScheme: "dark",
 };
 

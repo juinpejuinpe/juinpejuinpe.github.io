@@ -7,14 +7,14 @@ export default function NotFound() {
       <div className="container notfound-inner">
         <p className="eyebrow mono">
           <span className="eyebrow-no">404</span>
-          空瓶
+          未命名月亮
         </p>
-        <h1 className="display-title">這一瓶已經售罄</h1>
+        <h1 className="display-title">這顆月亮還沒有名字</h1>
         <p className="notfound-desc">
-          你找的頁面不在架上——也許它從未釀成，也許它已經被帶走了。
+          你尋找的月亮不在這片夜空——也許它尚未被觀測，也許它已經被人帶走了。
         </p>
         <Link href="/" className="btn btn-gold">
-          回到{`${SITE_NAME}`}的店門
+          回到{`${SITE_NAME}`}的觀月台
         </Link>
       </div>
     </main>

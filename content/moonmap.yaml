@@ -1,0 +1,204 @@
+---
+siteName: 香淚月
+siteNameEn: Scentmoon
+role: 香港作者
+metaDescription: 香淚月 Scentmoon——香港作者《香淚月城市月相圖》。每一部作品都是一顆繞著陌生行星旋轉的童幻月亮：新書《我踩着童年考上了名校》、長篇小說與詩文皆懸於夜空。
+
+hero:
+  kicker: 香淚月・城市月相圖
+  titleLine1: 她哭過的月亮，
+  titleLine2: 都掛在外星夜空。
+  subline: 活著大概是天神忘記把雙手合十的奇蹟。
+  since: 觀月始於 2019.10.30
+  hours: 月出後觀測
+  hoursNote: 打烊時間不詳
+  coordinate: 香港・北緯 22°16′｜東經 114°10′
+
+follow:
+  label: 追蹤香淚月
+  handle: scent._.moon
+  url: https://www.instagram.com/scent._.moon/
+  dmLabel: 私訊觀月者
+  dmUrl: https://ig.me/m/scent._.moon
+
+book:
+  eyebrow: 鎮店之月
+  tag: 2026 新書
+  moonName: 紙火箭月
+  phase: 滿月
+  phasePct: 100
+  phaseSide: left
+  title: 我踩着童年考上了名校
+  subtitle: 讓我們回到學校，把痛苦的都炸掉。
+  planet: 名校星
+  planetLine: 一顆把小孩分成三六九等的行星
+  price: HK$98
+  publisher: 紅出版
+  cover: /images/book-poster-2026.jpg
+  coverAlt: 書展海報《我踩着童年考上了名校》——BooM，讓我們回到學校，把痛苦的都炸掉，香淚月 scentmoon
+  provenance: 產地｜香港的學校走廊
+  crafted: 觀測於 2019—2026
+  quote: 我在看書時，真實地跟着知恩一起焦慮、悲傷、憤怒，卻一點疑問都沒有，這就是成長的代價，看得懂故事之下，還愛演故事之中。
+  quoteBy: 作家張羨青
+  moonLine: 童話裡，她把揉皺的考卷摺成紙火箭，射穿學校屋頂；紙火箭沒有掉下來，成為繞著名校星打轉的月亮。
+  records:
+    - label: 月之暗面
+      value: 罰站過的天台，與不敢舉手的五分鐘
+    - label: 月海
+      value: 考卷撕成的紙河，喜怒哀樂都沉在水底
+    - label: 向陽面
+      value: 長出翅膀的自由
+  intro:
+    - 八歲的范知恩從未預想過，學校的用途原來不止讀書。
+    - 被騙多了，她長出刺蝟的尖刺，也逐漸變成一個稱職的騙子，騙過那些冠冕堂皇的惡意。
+    - 教育是人與人之間的藝術。同一件事，只要交換敘事角度，便會對錯難分。
+  actions:
+    - label: 購買紙書
+      url: https://www.red-publish.com/book/3227
+    - label: DM 訂購（送明信片）
+      url: https://ig.me/m/scent._.moon
+  note: 書展限定明信片、海玻璃吊飾與作者手作周邊，詳情在 Instagram。
+
+works:
+  - no: "01"
+    moonName: 結霜的夢月
+    phase: 新月
+    phasePct: 0
+    phaseSide: right
+    title: 話說有人建了關住一億人的冷凍庫
+    kind: 科幻權謀長篇
+    status: 已完結
+    planet: 冷凍星
+    planetLine: 一顆零下一千年仍在自轉的行星
+    period: 公轉週期：零下一千年
+    moonLine: 一億個人同時睡著時，連月亮也會結霜；夢裡人人有編號，醒來要重新數人頭。
+    url: https://www.penana.com/story/77445/
+    cta: 到 Penana 讀全本
+  - no: "02"
+    moonName: 退貨月
+    phase: 下弦月
+    phasePct: 50
+    phaseSide: left
+    title: 我想將青春退貨
+    kind: 現實校園小說
+    planet: 青春的百貨星
+    planetLine: 一顆貨架比天空更高的行星
+    period: 公轉週期：中學四年
+    moonLine: 青春不合身時，孩子會把它拿回櫃檯退貨；店員說：可以，但要用回憶來找續。
+    url: https://www.penana.com/user/78808
+    cta: 到 Penana 找它
+  - no: "03"
+    moonName: 戲台月
+    phase: 殘月
+    phasePct: 20
+    phaseSide: left
+    title: 青玉案
+    kind: 古風長篇
+    status: 已完結
+    planet: 破碎山河星
+    planetLine: 一顆戲散了仍在唱的行星
+    period: 公轉週期：三天三夜
+    moonLine: 這顆月亮是三天三夜的戲台；戲終人散後，只剩一雷驚響與半闋殘詞。
+    url: https://www.penana.com/user/78808
+    cta: 到 Penana 讀全本
+
+nightSeries:
+  eyebrow: 深宵星群
+  title: 詩・散文・短篇：凌晨兩點到四點升起
+  desc: 一群沒有固定軌道的小星星，不定期在 Instagram 現身；看見是緣分，錯過也不必追。
+  phase: 娥眉月
+  phasePct: 25
+  phaseSide: right
+  ctaLabel: 到 Instagram 觀星
+  url: https://www.instagram.com/scent._.moon/
+
+about:
+  eyebrow: 觀月者
+  heading: 一個把城市掛上夜空的人
+  paragraphs:
+    - 香淚月，00後，香港人。筆名有一個不可告人的來源，正在大學讀一個要和人類與非人類打交道的科系。
+    - 她把哭過的城市記憶一顆顆摺成童幻月亮，安放在陌生行星的夜空。風格遊走在流行文學與傳統文學之間，作品曾刊於《聲韻詩刊》、《大頭菜文藝月刊》與《盒誌》。
+    - 相信文字是慢性的解藥，喜歡咖啡、酒，也喜歡貓。夜裏低頭寫字，抬頭替城市觀月。
+  facts:
+    - label: 觀測站
+      value: 香港
+    - label: 起筆
+      value: 2019.10.30
+    - label: 星等
+      value: 00後・大學生・理工腦
+    - label: 世界觀
+      value: 日曦（建構中）
+    - label: 手作
+      value: 海玻璃吊飾・明信片
+    - label: 分身
+      value: "@scentmoon_arts"
+  quote: 天神忘了合十，我才漏進人間；既然漏了進來，便要替城市的月亮照明。
+
+archive:
+  eyebrow: 星曆
+  heading: 曾刊於紙上的句子
+  note: 更多紀錄，持續觀測中。
+  groups:
+    - collection: 聲韻詩刊
+      entries:
+        - issue: 第69期
+          title: 蕪
+        - issue: 第71期
+          title: 致項鍊
+    - collection: 大頭菜文藝月刊
+      entries:
+        - issue: 2022年5月號
+          title: melancholic 的流量密碼
+        - issue: 2022年6月號
+          title: 5.45mm
+        - issue: 2022年10月號
+          title: 世界謊言
+    - collection: 盒誌
+      entries:
+        - issue: 2021年《圍爐》
+          title: Zero.begin
+    - collection: Penana
+      entries:
+        - issue: 2022 暑假日更大挑戰
+          title: 全更組第三名《話說有人建了關住一億人的冷凍庫》
+    - collection: 紅出版
+      entries:
+        - issue: 2026
+          title: 《我踩着童年考上了名校》・香港書展新書
+
+observationLabel: 文字觀測點
+footprints:
+  - 香港・堅尼地城海邊
+  - 香港・教員室門外
+  - 高雄・巷仔內
+  - 濟州・晴空之下
+  - 仙台・冬天
+  - 班夫・雪嶺
+  - 多倫多・通勤列車
+  - 紐約・逃回香港的機艙
+
+contact:
+  eyebrow: 來找我
+  heading: 與觀月者聯絡
+  intro: 合作、邀稿、插畫或其他想法，歡迎到 Instagram 私訊，或寫信到觀月台。來訊簡單說明來意即可，回覆需時，感謝你的耐心。
+  dmLabel: Instagram 私訊
+  dmUrl: https://ig.me/m/scent._.moon
+  email: zerobegin08@gmail.com
+  emailLabel: 寫信到觀月台
+  socials:
+    - label: Instagram
+      url: https://www.instagram.com/scent._.moon/
+    - label: Threads
+      url: https://www.threads.net/@scent._.moon
+    - label: Facebook
+      url: https://facebook.com/scentmoonhostel/
+    - label: Penana
+      url: https://www.penana.com/user/78808
+    - label: 舊網誌・傾榼閣
+      url: https://scentmoonpinnari.blogspot.com/
+    - label: 你是哪一瓶香
+      url: https://forms.gle/hYDHgvbBFsgiSJC27
+
+footer:
+  hours: 月出後觀測・打烊時間不詳
+  copyright: 香淚月 Scentmoon

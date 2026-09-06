@@ -9,6 +9,10 @@ https://scentmoon.com。
 全站內容集中在 [`content/site.yaml`](content/site.yaml)。直接修改這個檔案並
 推送到 `main`，網站便會自動重建更新。
 
+實驗分支 `codex/scentmoon-moonmap` 是第二主題《香淚月城市月相圖》：
+以「每部作品＝繞著陌生行星旋轉的童幻月亮」取代香調描述，內容獨立放在
+[`content/moonmap.yaml`](content/moonmap.yaml)。
+
 主要段落：
 
 - `hero` — 店門（主標題、副題、營業時間）

@@ -1,7 +1,7 @@
-import AtelierSite from "@/components/atelier/AtelierSite";
-import { getSiteContent } from "@/lib/site-content";
+import MoonMapSite from "@/components/moonmap/MoonMapSite";
+import { getMoonContent } from "@/lib/moon-content";
 
 export default function HomePage() {
-  const site = getSiteContent();
-  return <AtelierSite site={site} />;
+  const site = getMoonContent();
+  return <MoonMapSite site={site} />;
 }

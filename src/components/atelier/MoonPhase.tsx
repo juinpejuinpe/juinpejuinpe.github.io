@@ -45,10 +45,12 @@ function paintMoon(
   const cy = (height - 1) / 2;
   const radius = Math.min(width, height) / 2 - 0.5;
 
-  const angle = phase * Math.PI * 2;
-  const boundary = Math.cos(angle); // +1 new moon, -1 full moon
-  const waxing = phase <= 0.5; // waxing: lit edge on the right
-  const softEdge = radius * 0.12;
+  // Sun direction in the moon's frame. new = behind (0,0,-1), first quarter =
+  // right (1,0,0), full = front (0,0,1), last quarter = left (-1,0,0).
+  const sunAngle = Math.PI * (1 - 2 * phase);
+  const sunX = Math.sin(sunAngle);
+  const sunZ = Math.cos(sunAngle);
+  const soft = 0.24; // angular softness of the terminator
 
   for (let y = 0; y < height; y += 1) {
     const dy = (y - cy) / radius;
@@ -61,11 +63,11 @@ function paintMoon(
       const dx = (x - cx) / radius;
       if (dx < -limb || dx > limb) continue;
 
-      // Distance into the lit side. Positive = illuminated.
-      const distance = waxing ? dx - boundary : -boundary - dx;
-      const terminator = clamp01(0.5 + distance / (softEdge / radius));
-      const lit = smooth(terminator);
-      const brightness = 0.07 + 0.93 * lit;
+      // Sphere normal on the visible hemisphere, then light it with the sun.
+      const z = Math.sqrt(Math.max(0, 1 - dx * dx - dy * dy));
+      const light = dx * sunX + z * sunZ;
+      const lit = smooth(0.5 + light / soft);
+      const brightness = 0.06 + 0.94 * lit;
 
       const i = rowOffset + x * 4;
       pixels[i] = pixels[i] * brightness;

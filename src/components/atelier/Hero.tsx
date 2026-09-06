@@ -4,20 +4,14 @@ import type { CSSProperties } from "react";
 import { ArrowUpRightGlyph } from "./icons";
 import type { FollowContent, HeroContent } from "@/lib/site-content";
 
-function CharacterLine({ text }: { text: string }) {
-  return (
-    <span className="hero-line" aria-hidden="true">
-      {Array.from(text).map((char, index) => (
-        <span
-          key={`${char}-${index}`}
-          className="hero-char"
-          style={{ "--i": index } as CSSProperties}
-        >
-          {char}
-        </span>
-      ))}
-    </span>
-  );
+/**
+ * The poem is shown as giant vertical type (直排). Punctuation is dropped
+ * from the visual column — the real heading stays in the sr-only h1.
+ */
+function poemCharacters(titleLine1: string, titleLine2: string): string[] {
+  return (titleLine1 + titleLine2)
+    .replace(/[。．.！!？?，,、「」『』]/g, "")
+    .split("");
 }
 
 type HeroProps = {
@@ -27,34 +21,43 @@ type HeroProps = {
 };
 
 export default function Hero({ hero, follow, onNavigate }: HeroProps) {
+  const chars = poemCharacters(hero.titleLine1, hero.titleLine2);
+  const tearIndex = chars.findIndex((char) => char === "淚");
+
   return (
     <section className="hero" id="top" aria-labelledby="hero-title">
-      <div className="hero-glow" aria-hidden="true" data-parallax />
-      <div className="container hero-grid">
+      <h1 id="hero-title" className="sr-only">
+        {hero.titleLine1}
+        {hero.titleLine2}
+      </h1>
+
+      <div className="hero-grid">
+        <div className="hero-poem" aria-hidden="true">
+          <span className="poem-spine" />
+          {chars.map((char, index) => (
+            <span key={`${char}-${index}`} className="char-mask">
+              <span
+                className={`hero-char${index === tearIndex ? " is-tear" : ""}`}
+                style={{ "--i": index } as CSSProperties}
+              >
+                {char}
+              </span>
+            </span>
+          ))}
+        </div>
+
         <div className="hero-copy">
-          <p className="hero-kicker reveal-soft">{hero.kicker}</p>
-          <h1 className="hero-title" id="hero-title">
-            <span className="sr-only">
-              {hero.titleLine1}
-              {hero.titleLine2}
-            </span>
-            <span aria-hidden="true" className="hero-title-visual">
-              <CharacterLine text={hero.titleLine1} />
-              <CharacterLine text={hero.titleLine2} />
-            </span>
-          </h1>
-          <p className="hero-subline">
-            「{hero.subline}」
-          </p>
+          <p className="hero-kicker mono">{hero.kicker}</p>
+          <p className="hero-subline">「{hero.subline}」</p>
 
           <div className="hero-actions">
             <a
               href={follow.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-gold btn-lg hero-follow"
+              className="btn btn-follow btn-lg hero-follow"
             >
-              {follow.label}
+              <span>{follow.label}</span>
               <span className="btn-handle">@{follow.handle}</span>
               <ArrowUpRightGlyph className="btn-arrow" />
             </a>
@@ -71,29 +74,19 @@ export default function Hero({ hero, follow, onNavigate }: HeroProps) {
           </div>
         </div>
 
-        <div className="hero-side" aria-hidden="true">
-          <div className="hero-visual">
-            <div className="hero-video-slot" />
-            <p className="hero-video-note mono">
-              影片位｜Seedance 片段待補
-            </p>
-          </div>
-
-          <div className="hero-hours">
-            <p className="mono hero-hours-line">
-              {hero.hours}
-              <span className="hero-hours-note">{hero.hoursNote}</span>
-            </p>
-            <p className="mono hero-since">{hero.since}</p>
-          </div>
+        <div className="hero-media" aria-hidden="true">
+          <div className="hero-video-frame" />
+          <p className="hero-video-note mono">影片位｜Seedance 片段待補</p>
         </div>
       </div>
 
-      <div className="hero-footer mono">
-        <span>{follow.handle}</span>
-        <span className="hero-footer-dot" aria-hidden="true" />
-        <span>{hero.hours}・{hero.hoursNote}</span>
-        <span className="hero-footer-dot" aria-hidden="true" />
+      <div className="hero-foot mono">
+        <span>@{follow.handle}</span>
+        <span className="hero-foot-sep" aria-hidden="true" />
+        <span>
+          {hero.hours}・{hero.hoursNote}
+        </span>
+        <span className="hero-foot-sep" aria-hidden="true" />
         <span>{hero.since}</span>
       </div>
     </section>

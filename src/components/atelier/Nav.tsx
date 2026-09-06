@@ -1,6 +1,7 @@
 "use client";
 
-import type { MouseEvent } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
+import { ArrowUpRightGlyph } from "./icons";
 
 const LINKS = [
   { href: "#book", label: "鎮店之作" },
@@ -12,36 +13,59 @@ const LINKS = [
 
 type NavProps = {
   name: string;
+  handle: string;
   followLabel: string;
   followUrl: string;
   onNavigate: (href: string) => void;
+  onMenuChange?: (open: boolean) => void;
 };
 
 export default function Nav({
   name,
+  handle,
   followLabel,
   followUrl,
   onNavigate,
+  onMenuChange,
 }: NavProps) {
+  const [open, setOpen] = useState(false);
+
+  const close = () => setOpen(false);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") close();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
+  useEffect(() => {
+    onMenuChange?.(open);
+  }, [open, onMenuChange]);
+
   const go = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
     event.preventDefault();
+    close();
     onNavigate(href);
   };
 
   return (
     <header className="atelier-nav">
-      <div className="atelier-nav-inner">
+      <div className="nav-inner">
         <a
           href="#top"
           className="atelier-logo"
           onClick={(event) => go(event, "#top")}
           aria-label={`${name}，回到店門`}
         >
-          <span className="atelier-logo-mark" aria-hidden="true" />
+          <span className="logo-mark" aria-hidden="true" />
           <span>{name}</span>
         </a>
 
-        <nav className="atelier-nav-links" aria-label="調香室各區">
+        <nav className="nav-links" aria-label="調香室各區">
           {LINKS.map((link) => (
             <a
               key={link.href}
@@ -53,27 +77,61 @@ export default function Nav({
           ))}
         </nav>
 
-        <a
-          href={followUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="atelier-nav-follow"
-        >
-          {followLabel}
-        </a>
+        <div className="nav-actions">
+          <a
+            href={followUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-follow nav-follow"
+          >
+            {followLabel}
+          </a>
+          <button
+            type="button"
+            className="burger"
+            aria-expanded={open}
+            aria-controls="site-menu"
+            aria-label={open ? "關閉選單" : "開啟選單"}
+            onClick={() => setOpen((value) => !value)}
+          >
+            <span className="burger-line" />
+            <span className="burger-line" />
+            <span className="burger-line" />
+          </button>
+        </div>
       </div>
 
-      <nav className="atelier-nav-mobile" aria-label="調香室各區（流動）">
-        {LINKS.map((link) => (
+      <div
+        id="site-menu"
+        className={`nav-overlay${open ? " is-open" : ""}`}
+      >
+        <nav className="overlay-links" aria-label="調香室各區（流動選單）">
+          {LINKS.map((link, index) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={(event) => go(event, link.href)}
+            >
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              {link.label}
+            </a>
+          ))}
+        </nav>
+
+        <div className="overlay-foot">
           <a
-            key={link.href}
-            href={link.href}
-            onClick={(event) => go(event, link.href)}
+            href={followUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-follow"
+            onClick={close}
           >
-            {link.label}
+            {followLabel}
+            <ArrowUpRightGlyph className="btn-arrow" />
           </a>
-        ))}
-      </nav>
+          <span className="overlay-handle">@{handle}</span>
+        </div>
+      </div>
     </header>
   );
 }

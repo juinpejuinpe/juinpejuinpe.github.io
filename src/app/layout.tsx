@@ -7,6 +7,9 @@ import "@fontsource/noto-sans-tc/400.css";
 import "@fontsource/noto-sans-tc/500.css";
 import "@fontsource/ibm-plex-mono/400.css";
 import "@fontsource/ibm-plex-mono/500.css";
+import "@fontsource/lxgw-wenkai-tc/400.css";
+import "@fontsource/lxgw-wenkai-tc/700.css";
+import "@fontsource/iansui/400.css";
 import "./globals.css";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_NAME_EN, SITE_URL } from "@/lib/site";
 

@@ -38,3 +38,19 @@ pnpm dev
 
 每次 push 到 `main`，GitHub Actions 便會自動建置並發布到
 https://scentmoon.com。
+
+## Vercel 私人預覽（Preview）
+
+GitHub Pages 無法設密碼，如需只讓指定的人看到未發布版本，用 Vercel：
+
+1. 將分支推上 GitHub（例如 `codex/scentmoon-atelier`）。
+2. 到 vercel.com 用 GitHub 帳號登入 → Add New Project → Import 本 repo。
+3. Framework Preset 選 Next.js，其餘設定保留預設即可（靜態輸出 `out/`）。
+4. 首次部署後，在 Project → Settings → Deployment Protection 開啟
+   **Vercel Authentication**（scope 用 Standard Protection），預覽 URL
+   便需要登入或 Shareable Link 才能查看。
+5. 對外分享時，在 Deployment 頁面按 Share → Shareable Link，把連結只交給
+   指定的人；完成後可隨時在 Deployment Protection → Access 撤銷。
+
+每次 push 到非 `main` 分支，Vercel 都會自動產生新的私人預覽 URL；
+合併到 `main` 時 GitHub Pages 照常發布正式網站。

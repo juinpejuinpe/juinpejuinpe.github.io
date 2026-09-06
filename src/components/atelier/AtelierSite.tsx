@@ -225,13 +225,19 @@ export default function AtelierSite({ site }: AtelierSiteProps) {
     const float = document.querySelector<HTMLElement>(".follow-float");
     if (!float) return;
 
-    const onScroll = () => {
-      const pastHero = window.scrollY > window.innerHeight * 0.8;
-      float.classList.toggle("is-visible", pastHero);
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    gsap.registerPlugin(ScrollTrigger);
+    float.classList.toggle(
+      "is-visible",
+      window.scrollY > window.innerHeight * 0.8
+    );
+    const trigger = ScrollTrigger.create({
+      start: () => window.innerHeight * 0.8,
+      end: "max",
+      onUpdate: (self) => {
+        float.classList.toggle("is-visible", self.scroll() > 0);
+      },
+    });
+    return () => trigger.kill();
   }, []);
 
   const scrollTo = (href: string) => {

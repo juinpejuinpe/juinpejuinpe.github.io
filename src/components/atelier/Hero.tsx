@@ -3,6 +3,7 @@
 import type { CSSProperties } from "react";
 import { ArrowUpRightGlyph } from "./icons";
 import type { FollowContent, HeroContent } from "@/lib/site-content";
+import MoonPhase from "./MoonPhase";
 
 /**
  * The poem is shown as giant vertical type (直排). Punctuation is dropped
@@ -46,10 +47,15 @@ export default function Hero({ hero, follow, onNavigate }: HeroProps) {
           ))}
         </div>
 
-        <div className="hero-copy">
-          <p className="hero-kicker mono">{hero.kicker}</p>
-          <p className="hero-subline">「{hero.subline}」</p>
+        <div className="moon-area">
+          <MoonPhase />
+        </div>
 
+        <div className="hero-copy">
+          <div className="hero-copy-text">
+            <p className="hero-kicker mono">{hero.kicker}</p>
+            <p className="hero-subline">「{hero.subline}」</p>
+          </div>
           <div className="hero-actions">
             <a
               href={follow.url}
@@ -72,11 +78,6 @@ export default function Hero({ hero, follow, onNavigate }: HeroProps) {
               看最新的書
             </a>
           </div>
-        </div>
-
-        <div className="hero-media" aria-hidden="true">
-          <div className="hero-video-frame" />
-          <p className="hero-video-note mono">影片位｜Seedance 片段待補</p>
         </div>
       </div>
 

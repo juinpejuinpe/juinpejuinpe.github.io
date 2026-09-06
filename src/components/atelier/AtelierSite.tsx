@@ -7,7 +7,6 @@ import { useGSAP } from "@gsap/react";
 import Lenis from "lenis";
 import Nav from "./Nav";
 import Hero from "./Hero";
-import MoonPour from "./MoonPour";
 import {
   ArrowUpRightGlyph,
   InstagramGlyph,
@@ -88,36 +87,6 @@ export default function AtelierSite({ site }: AtelierSiteProps) {
           });
       }
 
-      gsap.fromTo(
-        ".pour-line",
-        { strokeDashoffset: 140 },
-        {
-          strokeDashoffset: 0,
-          ease: "none",
-          scrollTrigger: {
-            trigger: ".pour",
-            start: "top 80%",
-            end: "bottom 70%",
-            scrub: 1,
-          },
-        }
-      );
-
-      gsap.fromTo(
-        ".bottle-liquid",
-        { scaleY: 0.02 },
-        {
-          scaleY: 1,
-          transformOrigin: "50% 100%",
-          ease: "none",
-          scrollTrigger: {
-            trigger: ".pour",
-            start: "top 70%",
-            end: "bottom 40%",
-            scrub: 1,
-          },
-        }
-      );
     },
     { scope: rootRef }
   );
@@ -188,8 +157,6 @@ export default function AtelierSite({ site }: AtelierSiteProps) {
       <main id="main">
         <Hero hero={hero} follow={follow} onNavigate={scrollTo} />
 
-        <MoonPour />
-
         {/* 01 鎮店之香 */}
         <section id="book" className="section" aria-labelledby="book-title">
           <div className="container">
@@ -212,21 +179,6 @@ export default function AtelierSite({ site }: AtelierSiteProps) {
                   {book.intro.map((line) => (
                     <p key={line}>{line}</p>
                   ))}
-                </div>
-
-                <div className="scent-notes" data-reveal>
-                  <div className="scent-note">
-                    <span className="scent-stage mono">前調</span>
-                    <span>{book.scent.front}</span>
-                  </div>
-                  <div className="scent-note">
-                    <span className="scent-stage mono">中調</span>
-                    <span>{book.scent.middle}</span>
-                  </div>
-                  <div className="scent-note">
-                    <span className="scent-stage mono">後調</span>
-                    <span>{book.scent.base}</span>
-                  </div>
                 </div>
 
                 <div className="book-actions" data-reveal>
@@ -293,12 +245,11 @@ export default function AtelierSite({ site }: AtelierSiteProps) {
             <div className="section-head">
               <p className="eyebrow mono">
                 <span className="eyebrow-no">02</span>
-                香氣陳列
+                架上書
               </p>
-              <p className="section-note">每瓶都已開封，歡迎試聞。</p>
             </div>
             <h2 className="display-title display-title-sm" id="shelf-title">
-              架上其他瓶子
+              架上其他書
             </h2>
 
             <div className="work-list" data-reveal-group>
@@ -308,25 +259,19 @@ export default function AtelierSite({ site }: AtelierSiteProps) {
                   href={work.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="work-card"
+                  className="work-label"
                 >
-                  <span className="work-no mono">{work.no}</span>
-                  <span className="work-main">
-                    <span className="work-title">{work.title}</span>
-                    <span className="work-kind mono">
-                      {work.kind}
-                      {work.status ? `・${work.status}` : ""}
-                    </span>
+                  <span className="work-label-head mono">
+                    <span>香淚月 Scentmoon・作品 {work.no}</span>
+                    <span>{work.status ?? "連載中"}</span>
                   </span>
-                  <span className="work-scent">
-                    <span className="work-scent-label mono">香調</span>
-                    {work.scent}
-                    <span className="work-provenance mono">
-                      {work.provenance}
-                    </span>
+                  <span className="work-label-title">{work.title}</span>
+                  <span className="work-label-meta mono">
+                    <span>{work.kind}</span>
+                    <span>{work.provenance}</span>
                   </span>
-                  <span className="work-cta mono">
-                    {work.cta}
+                  <span className="work-label-foot mono">
+                    <span>{work.cta}</span>
                     <ArrowUpRightGlyph className="work-arrow" />
                   </span>
                 </a>

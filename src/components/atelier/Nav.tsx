@@ -3,8 +3,8 @@
 import type { MouseEvent } from "react";
 
 const LINKS = [
-  { href: "#book", label: "鎮店之香" },
-  { href: "#shelf", label: "香氣陳列" },
+  { href: "#book", label: "鎮店之作" },
+  { href: "#shelf", label: "架上書" },
   { href: "#about", label: "調香師" },
   { href: "#archive", label: "墨跡" },
   { href: "#contact", label: "來找我" },

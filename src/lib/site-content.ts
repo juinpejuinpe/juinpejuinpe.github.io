@@ -25,12 +25,6 @@ export type FollowContent = {
   dmUrl: string;
 };
 
-export type ScentNotes = {
-  front: string;
-  middle: string;
-  base: string;
-};
-
 export type BookAction = {
   label: string;
   url: string;
@@ -49,7 +43,6 @@ export type BookContent = {
   crafted: string;
   quote: string;
   quoteBy: string;
-  scent: ScentNotes;
   intro: string[];
   actions: BookAction[];
   note: string;
@@ -60,7 +53,6 @@ export type WorkContent = {
   title: string;
   kind: string;
   status?: string;
-  scent: string;
   provenance: string;
   url: string;
   cta: string;
@@ -175,7 +167,6 @@ export function getSiteContent(): SiteContent {
       crafted: "",
       quote: "",
       quoteBy: "",
-      scent: { front: "", middle: "", base: "" },
       intro: [],
       actions: [],
       note: "",

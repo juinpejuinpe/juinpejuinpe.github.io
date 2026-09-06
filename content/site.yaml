@@ -2,7 +2,7 @@
 siteName: 香淚月
 siteNameEn: Scentmoon
 role: 香港作者
-metaDescription: 香淚月 Scentmoon——香港作者，把淚釀成香的人。月光下的調香室：新書《我踩着童年考上了名校》、長篇小說與詩文皆在此陳列。
+metaDescription: 香淚月 Scentmoon——香港作者，把淚釀成香的人。最新出版《我踩着童年考上了名校》與長篇小說、詩文皆陳列於此。
 
 hero:
   kicker: 香港作者｜香淚月
@@ -21,7 +21,7 @@ follow:
   dmUrl: https://ig.me/m/scent._.moon
 
 book:
-  eyebrow: 鎮店之香
+  eyebrow: 鎮店之作
   tag: 2026 新書
   title: 我踩着童年考上了名校
   subtitle: 讓我們回到學校，把痛苦的都炸掉。
@@ -30,13 +30,9 @@ book:
   cover: /images/book-poster-2026.jpg
   coverAlt: 書展海報《我踩着童年考上了名校》——BooM，讓我們回到學校，把痛苦的都炸掉，香淚月 scentmoon
   provenance: 產地｜香港的學校走廊
-  crafted: 調製於 2019—2026
+  crafted: 創作於 2019—2026
   quote: 我在看書時，真實地跟着知恩一起焦慮、悲傷、憤怒，卻一點疑問都沒有，這就是成長的代價，看得懂故事之下，還愛演故事之中。
   quoteBy: 作家張羨青
-  scent:
-    front: 粉筆塵與消毒藥水
-    middle: 被揉皺的成績表
-    base: 自由
   intro:
     - 八歲的范知恩從未預想過，學校的用途原來不止讀書。
     - 被騙多了，她長出刺蝟的尖刺，也逐漸變成一個稱職的騙子，騙過那些冠冕堂皇的惡意。
@@ -53,14 +49,12 @@ works:
     title: 話說有人建了關住一億人的冷凍庫
     kind: 科幻權謀長篇
     status: 已完結
-    scent: 金屬、雪與監控鏡頭的不眠
     provenance: 產地｜零下一千年的冷凍庫
     url: https://www.penana.com/story/77445/
     cta: 到 Penana 讀全本
   - no: "02"
     title: 我想將青春退貨
     kind: 現實校園小說
-    scent: 汽水、眼淚與未寄出的信
     provenance: 產地｜教員室門外的走廊
     url: https://www.penana.com/user/78808
     cta: 到 Penana 找它
@@ -68,15 +62,14 @@ works:
     title: 青玉案
     kind: 古風長篇
     status: 已完結
-    scent: 沉香、硯墨與舊銅
     provenance: 產地｜破碎山河的古卷
     url: https://www.penana.com/user/78808
     cta: 到 Penana 讀全本
 
 nightSeries:
-  eyebrow: 午夜試香
+  eyebrow: 深宵文字
   title: 深宵系列：詩・散文・短篇
-  desc: 詩與散文不定期在 Instagram 開張，營業時間多在凌晨兩點到四點之間，售罄即下架。
+  desc: 詩與散文不定期在 Instagram 出現，寫作時間多在凌晨兩點到四點之間。
   ctaLabel: 到 Instagram 讀
   url: https://www.instagram.com/scent._.moon/
 

@@ -13,9 +13,9 @@ https://scentmoon.com。
 
 - `hero` — 店門（主標題、副題、營業時間）
 - `follow` — Instagram 追蹤連結
-- `book` — 鎮店之香：《我踩着童年考上了名校》（香調、介紹、購買連結）
-- `works` — 香氣陳列架上的其他作品（每瓶一個條目）
-- `nightSeries` — 午夜試香（Instagram 詩文入口）
+- `book` — 鎮店之作：《我踩着童年考上了名校》（介紹、購買連結）
+- `works` — 架上書（書名、類型、產地，以瓶標籤呈現）
+- `nightSeries` — 深宵文字（Instagram 詩文入口）
 - `about` — 調香師（自介、資料卡）
 - `archive` — 墨跡（刊物與比賽紀錄）
 - `footprints` — 文字走過的地方

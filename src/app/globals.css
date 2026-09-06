@@ -555,44 +555,28 @@ html.js .hero-actions {
   align-items: center;
 }
 
-.moon-window {
-  position: relative;
-  width: clamp(11rem, 17vw, 15.5rem);
-}
-
-.moon-halo {
-  position: absolute;
-  inset: -18%;
-  background: radial-gradient(circle, rgba(217, 188, 138, 0.22), transparent 66%);
-  filter: blur(6px);
-}
-
-.moon-disc {
-  position: relative;
-  aspect-ratio: 1;
+.hero-visual {
+  width: clamp(15rem, 18vw, 18.5rem);
   display: grid;
-  place-items: center;
+  gap: 0.9rem;
+  justify-items: center;
+}
+
+.hero-video-slot {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
   border: 1px solid var(--line-gold);
-  border-radius: 50%;
+  border-radius: 4px;
   background:
-    radial-gradient(circle at 36% 32%, rgba(242, 236, 221, 0.14), transparent 52%),
-    rgba(217, 188, 138, 0.035);
-  box-shadow:
-    inset 0 0 4rem rgba(217, 188, 138, 0.05),
-    0 0 4rem -1rem rgba(217, 188, 138, 0.35);
+    radial-gradient(80% 58% at 50% 30%, rgba(217, 188, 138, 0.08), transparent 70%),
+    var(--ink-2);
 }
 
-.moon-crescent {
-  width: 64%;
-  color: var(--gold);
-  filter: drop-shadow(0 0 14px rgba(217, 188, 138, 0.4));
-}
-
-.moon-caption {
-  margin-top: 1.1rem;
-  text-align: center;
-  font-size: 0.66rem;
-  letter-spacing: 0.18em;
+.hero-video-note {
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
   color: var(--moon-faint);
 }
 
@@ -641,59 +625,6 @@ html.js .hero-actions {
   background: var(--gold-deep);
 }
 
-/* Moon pour */
-
-.pour {
-  height: clamp(15rem, 34vh, 24rem);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 1rem;
-  gap: 0.35rem;
-}
-
-.pour-moon-glyph {
-  width: 2rem;
-  color: var(--gold);
-  filter: drop-shadow(0 0 12px rgba(217, 188, 138, 0.45));
-}
-
-.pour-line-svg {
-  width: 2px;
-  height: clamp(4.5rem, 11vh, 8rem);
-}
-
-.pour-line {
-  fill: none;
-  stroke: var(--gold);
-  stroke-width: 2;
-  stroke-dasharray: 140;
-  opacity: 0.7;
-}
-
-.pour-bottle {
-  width: clamp(3.4rem, 5vw, 4.8rem);
-  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.4));
-}
-
-.bottle-shape {
-  fill: rgba(217, 188, 138, 0.04);
-  stroke: var(--gold);
-  stroke-width: 1.4;
-  opacity: 0.9;
-}
-
-.bottle-stopper {
-  fill: var(--gold);
-  opacity: 0.85;
-}
-
-.bottle-liquid {
-  transform: scaleY(0.02);
-  transform-origin: 50% 100%;
-  will-change: transform;
-}
-
 /* Book */
 
 .book-grid {
@@ -718,30 +649,6 @@ html.js .hero-actions {
   margin-top: 2rem;
   color: var(--moon-dim);
   line-height: 2;
-}
-
-.scent-notes {
-  margin-top: 2.8rem;
-  max-width: 34rem;
-}
-
-.scent-note {
-  display: flex;
-  align-items: baseline;
-  gap: 1.4em;
-  padding: 1.05em 0;
-  border-top: 1px solid var(--line-soft);
-  color: var(--moon);
-  font-size: 1.02rem;
-  letter-spacing: 0.05em;
-}
-
-.scent-stage {
-  width: 4.2em;
-  flex: none;
-  color: var(--gold);
-  font-size: 0.7rem;
-  letter-spacing: 0.3em;
 }
 
 .book-actions {
@@ -822,88 +729,87 @@ html.js .hero-actions {
 
 .work-list {
   margin-top: clamp(2.6rem, 6vw, 4.5rem);
-  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2.4vw, 1.8rem);
 }
 
-.work-card {
-  display: grid;
-  grid-template-columns: 4.5rem minmax(0, 1.5fr) minmax(0, 1fr) auto;
-  align-items: center;
-  gap: clamp(1.2rem, 3vw, 3rem);
-  padding: clamp(1.7rem, 3.4vw, 2.5rem) 0;
-  border-bottom: 1px solid var(--line-soft);
+.work-label {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: clamp(1.4rem, 2.4vw, 1.9rem) clamp(1.3rem, 2vw, 1.7rem);
+  background: linear-gradient(158deg, #f3edde 0%, #e3d5b5 100%);
+  color: #241b0f;
+  border: 1px solid rgba(36, 27, 15, 0.72);
+  box-shadow: 0 1.6rem 3.4rem -1.8rem rgba(0, 0, 0, 0.9);
   transition:
-    background-color 0.4s var(--ease-out-quart),
-    padding-left 0.45s var(--ease-out-expo);
+    transform 0.5s var(--ease-out-expo),
+    box-shadow 0.5s var(--ease-out-expo);
 }
 
-.work-card:hover {
-  background: linear-gradient(90deg, rgba(217, 188, 138, 0.05), transparent 62%);
-  padding-left: 0.8rem;
+.work-label:focus-visible {
+  outline: 2px solid #241b0f;
+  outline-offset: 3px;
 }
 
-.work-no {
-  color: var(--moon-faint);
-  font-size: 0.85rem;
-  letter-spacing: 0.2em;
+.work-label:hover {
+  transform: translateY(-8px) rotate(-0.35deg);
+  box-shadow: 0 2.2rem 4rem -2rem rgba(0, 0, 0, 0.95);
 }
 
-.work-title {
-  display: block;
-  font-size: clamp(1.25rem, 2.2vw, 2rem);
-  font-weight: 700;
+.work-label-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(36, 27, 15, 0.28);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  color: #6c5733;
+}
+
+.work-label-title {
+  margin-top: 1.5rem;
+  font-size: clamp(1.25rem, 1.9vw, 1.65rem);
+  font-weight: 900;
   line-height: 1.55;
-  transition: color 0.35s var(--ease-out-quart);
+  letter-spacing: 0.02em;
+  text-wrap: balance;
 }
 
-.work-card:hover .work-title {
-  color: var(--gold-strong);
-}
-
-.work-kind {
-  display: block;
-  margin-top: 0.55em;
-  font-size: 0.7rem;
-  letter-spacing: 0.16em;
-  color: var(--gold);
-}
-
-.work-scent {
+.work-label-meta {
   display: grid;
-  gap: 0.5em;
-  color: var(--moon-dim);
-  line-height: 1.75;
-}
-
-.work-scent-label {
-  font-size: 0.66rem;
-  letter-spacing: 0.3em;
-  color: var(--gold);
-}
-
-.work-provenance {
-  font-size: 0.66rem;
+  gap: 0.55em;
+  margin-top: 1.6rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(36, 27, 15, 0.2);
+  font-size: 0.7rem;
   letter-spacing: 0.1em;
-  color: var(--moon-faint);
+  line-height: 1.7;
+  color: #4a3a1d;
 }
 
-.work-cta {
-  display: inline-flex;
+.work-label-foot {
+  display: flex;
   align-items: center;
-  gap: 0.5em;
-  white-space: nowrap;
-  color: var(--gold);
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.2rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: #8a6428;
 }
 
-.work-arrow {
-  width: 1.1em;
-  height: 1.1em;
+.work-label-foot .work-arrow {
+  width: 1.05em;
+  height: 1.05em;
   transition: transform 0.4s var(--ease-out-expo);
 }
 
-.work-card:hover .work-arrow {
+.work-label:hover .work-arrow {
   transform: translate(3px, -3px);
 }
 
@@ -1370,6 +1276,14 @@ html.js .hero-actions {
 
   .pour {
     height: 16rem;
+  }
+}
+
+@media (max-width: 960px) {
+  .work-list {
+    grid-template-columns: 1fr;
+    max-width: 34rem;
+    margin-inline: auto;
   }
 }
 

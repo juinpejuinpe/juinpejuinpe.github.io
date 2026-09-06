@@ -1785,7 +1785,11 @@ button {
 }
 
 .moon-canvas {
-  opacity: 1;
+  z-index: 1;
+}
+
+.moon-fallback {
+  z-index: 0;
 }
 
 .hero {

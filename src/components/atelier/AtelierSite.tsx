@@ -89,16 +89,6 @@ export default function AtelierSite({ site }: AtelierSiteProps) {
           ".hero-foot",
           { opacity: 0, duration: 0.8, clearProps: "opacity" },
           1.1
-        )
-        .from(
-          ".hero-video-frame",
-          {
-            opacity: 0,
-            y: 46,
-            duration: 1.1,
-            clearProps: "transform,opacity",
-          },
-          1.05
         );
 
       /* ---- mask reveals for block titles (type is the architecture) ---- */
@@ -323,6 +313,8 @@ export default function AtelierSite({ site }: AtelierSiteProps) {
                     width={1080}
                     height={1080}
                     className="feat-img"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="feat-meta mono">

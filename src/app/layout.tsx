@@ -1,62 +1,61 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
-import Link from "next/link";
+import "@fontsource/noto-serif-tc/400.css";
+import "@fontsource/noto-serif-tc/700.css";
+import "@fontsource/noto-serif-tc/900.css";
+import "@fontsource/noto-sans-tc/400.css";
+import "@fontsource/noto-sans-tc/500.css";
+import "@fontsource/ibm-plex-mono/400.css";
+import "@fontsource/ibm-plex-mono/500.css";
 import "./globals.css";
-import { SITE_DESCRIPTION, SITE_NAME, SITE_NAME_EN } from "@/lib/site";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_NAME_EN, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME}｜${SITE_NAME_EN}`,
-    template: `%s｜${SITE_NAME}`,
+    default: `${SITE_NAME} Scentmoon｜把淚釀成香的人`,
+    template: `%s｜${SITE_NAME} Scentmoon`,
   },
   description: SITE_DESCRIPTION,
+  openGraph: {
+    title: `${SITE_NAME} Scentmoon｜把淚釀成香的人`,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: `${SITE_NAME} ${SITE_NAME_EN}`,
+    locale: "zh_Hant_HK",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0a0b10",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="zh-Hant" className="h-full antialiased">
-      <body className="flex min-h-full flex-col bg-background text-foreground">
+    <html lang="zh-Hant" className="antialiased">
+      <body>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js')",
+          }}
+        />
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:px-4 focus:py-2 focus:text-accent"
+          className="skip-link"
         >
           跳到主要內容
         </a>
-        <header className="sticky top-0 z-10 border-b border-line bg-background/80 backdrop-blur">
-          <nav className="mx-auto flex w-full max-w-2xl items-center justify-between px-5 py-4 sm:px-8">
-            <Link
-              href="/"
-              className="text-lg font-semibold tracking-wide text-foreground transition-colors hover:text-accent"
-            >
-              {SITE_NAME}
-            </Link>
-            <div className="flex items-center gap-5 font-sans text-sm text-muted">
-              <Link
-                href="/works/"
-                className="transition-colors hover:text-foreground"
-              >
-                作品經歷
-              </Link>
-              <Link
-                href="/contact/"
-                className="transition-colors hover:text-foreground"
-              >
-                合作諮詢
-              </Link>
-            </div>
-          </nav>
-        </header>
-        <div id="main" className="flex-1">
-          {children}
-        </div>
-        <footer className="border-t border-line">
-          <div className="mx-auto flex w-full max-w-2xl flex-col items-center gap-1 px-5 py-8 font-sans text-xs text-muted sm:flex-row sm:justify-between sm:px-8">
-            <p>© {new Date().getFullYear()} {SITE_NAME}</p>
-            <p>所有文字與創作皆屬作者所有。</p>
-          </div>
-        </footer>
+        {children}
       </body>
     </html>
   );

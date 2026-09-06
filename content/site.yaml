@@ -1,78 +1,170 @@
 ---
 siteName: 香淚月
 siteNameEn: Scentmoon
-role: 多風格網絡作者
-tagline: 擅長在地獄煉造童話，在天堂誦唱深淵。
-avatarImage: ""
-bio:
-  - "詭異的筆名有一個不可告人的來源，目前主要筆耕於網絡小說平台 Penana。"
-  - "風格偏向多姿多彩，走自己的單程路，遊走在流行文學與傳統文學之間。"
-  - "正努力建構故事共同世界觀——【日曦】。"
-  - "🌘 創作始於 2019.10.30"
-socials:
-  - label: Instagram
-    url: "https://www.instagram.com/scent._.moon/"
-    icon: instagram
-  - label: Facebook
-    url: "https://facebook.com/scentmoonhostel/"
-    icon: facebook
-  - label: Penana
-    url: "https://www.penana.com/user/78808"
-    icon: penana
-buttons:
-  - label: 合作諮詢
-    href: "/contact/"
-  - label: 已出版作品及經歷
-    href: "/works/"
-  - label: Instagram
-    href: "https://www.instagram.com/scent._.moon/"
-    external: true
-  - label: Threads
-    href: "https://www.threads.com/@scent._.moon"
-    external: true
-  - label: 更多作品（Blogger：傾榼閣）
-    href: "https://scentmoonpinnari.blogspot.com/"
-    external: true
-  - label: Google Form 測驗
-    href: "https://forms.gle/hYDHgvbBFsgiSJC27"
-    external: true
-serials:
-  - title: 話說有人建了關住一億人的冷凍庫
-    genre: 科幻權謀長篇
-    status: 連載中
-    note: Penana 全站同步更新
-    tags:
-      - 科幻
-      - 權謀
-      - 長篇
-    url: "https://www.penana.com/story/77445/"
-publications:
-  - collection: 大頭菜文藝月刊
-    entries:
-      - issue: 2022年5月號 第77期
-        title: melancholic的流量密碼
-      - issue: 2022年6月號 第78期
-        title: 5.45mm
-      - issue: 2022年10月號 第80期
-        title: 世界謊言
-  - collection: 聲韻詩刊
-    entries:
-      - issue: 第69期
-        title: 蕪
-      - issue: 第71期
-        title: 致項鍊
-  - collection: Penana
-    entries:
-      - note: 2022年【暑假日更大挑戰】全更組第三名
-        title: 話說有人建了關住一億人的冷凍庫
-  - collection: 盒誌
-    entries:
-      - issue: 2021年《圍爐》
-        title: Zero.begin
+role: 香港作者
+metaDescription: 香淚月 Scentmoon——香港作者，把淚釀成香的人。月光下的調香室：新書《我踩着童年考上了名校》、長篇小說與詩文皆在此陳列。
+
+hero:
+  kicker: 香港作者｜香淚月
+  titleLine1: 把淚釀成香
+  titleLine2: 的人。
+  subline: 活著大概是天神忘記把雙手合十的奇蹟。
+  since: 創作始於 2019.10.30
+  hours: 月出後營業
+  hoursNote: 打烊時間不詳
+
+follow:
+  label: 追蹤香淚月
+  handle: scent._.moon
+  url: https://www.instagram.com/scent._.moon/
+  dmLabel: 私訊調香師
+  dmUrl: https://ig.me/m/scent._.moon
+
+book:
+  eyebrow: 鎮店之香
+  tag: 2026 新書
+  title: 我踩着童年考上了名校
+  subtitle: 讓我們回到學校，把痛苦的都炸掉。
+  price: HK$98
+  publisher: 紅出版
+  cover: /images/book-poster-2026.jpg
+  coverAlt: 書展海報《我踩着童年考上了名校》——BooM，讓我們回到學校，把痛苦的都炸掉，香淚月 scentmoon
+  provenance: 產地｜香港的學校走廊
+  crafted: 調製於 2019—2026
+  quote: 我在看書時，真實地跟着知恩一起焦慮、悲傷、憤怒，卻一點疑問都沒有，這就是成長的代價，看得懂故事之下，還愛演故事之中。
+  quoteBy: 作家張羨青
+  scent:
+    front: 粉筆塵與消毒藥水
+    middle: 被揉皺的成績表
+    base: 自由
+  intro:
+    - 八歲的范知恩從未預想過，學校的用途原來不止讀書。
+    - 被騙多了，她長出刺蝟的尖刺，也逐漸變成一個稱職的騙子，騙過那些冠冕堂皇的惡意。
+    - 教育是人與人之間的藝術。同一件事，只要交換敘事角度，便會對錯難分。
+  actions:
+    - label: 購買紙書
+      url: https://www.red-publish.com/book/3227
+    - label: DM 訂購（送明信片）
+      url: https://ig.me/m/scent._.moon
+  note: 書展限定明信片、海玻璃吊飾與作者手作周邊，詳情在 Instagram。
+
+works:
+  - no: "01"
+    title: 話說有人建了關住一億人的冷凍庫
+    kind: 科幻權謀長篇
+    status: 已完結
+    scent: 金屬、雪與監控鏡頭的不眠
+    provenance: 產地｜零下一千年的冷凍庫
+    url: https://www.penana.com/story/77445/
+    cta: 到 Penana 讀全本
+  - no: "02"
+    title: 我想將青春退貨
+    kind: 現實校園小說
+    scent: 汽水、眼淚與未寄出的信
+    provenance: 產地｜教員室門外的走廊
+    url: https://www.penana.com/user/78808
+    cta: 到 Penana 找它
+  - no: "03"
+    title: 青玉案
+    kind: 古風長篇
+    status: 已完結
+    scent: 沉香、硯墨與舊銅
+    provenance: 產地｜破碎山河的古卷
+    url: https://www.penana.com/user/78808
+    cta: 到 Penana 讀全本
+
+nightSeries:
+  eyebrow: 午夜試香
+  title: 深宵系列：詩・散文・短篇
+  desc: 詩與散文不定期在 Instagram 開張，營業時間多在凌晨兩點到四點之間，售罄即下架。
+  ctaLabel: 到 Instagram 讀
+  url: https://www.instagram.com/scent._.moon/
+
+about:
+  eyebrow: 調香師
+  heading: 一個漏進人間的奇蹟
+  paragraphs:
+    - 香淚月，00後，香港人。筆名有一個不可告人的來源，正在大學讀一個要和人類與非人類打交道的科系。
+    - 風格偏向多姿多彩，走自己的單程路，遊走在流行文學與傳統文學之間。作品曾刊於《聲韻詩刊》、《大頭菜文藝月刊》與《盒誌》。
+    - 相信把眼淚釀成文字，文字就會變成香。喜歡咖啡，也喜歡酒。
+  facts:
+    - label: 出生地
+      value: 香港
+    - label: 起筆
+      value: 2019.10.30
+    - label: 身份
+      value: 00後・大學生・理工腦
+    - label: 世界觀
+      value: 日曦（建構中）
+    - label: 手作
+      value: 海玻璃吊飾・明信片
+    - label: 分身
+      value: "@scentmoon_arts"
+  quote: 天神忘了合十，我才漏進人間；既然漏了進來，就要釀一點香。
+
+archive:
+  eyebrow: 墨跡
+  heading: 曾刊於紙上的句子
+  groups:
+    - collection: 聲韻詩刊
+      entries:
+        - issue: 第69期
+          title: 蕪
+        - issue: 第71期
+          title: 致項鍊
+    - collection: 大頭菜文藝月刊
+      entries:
+        - issue: 2022年5月號
+          title: melancholic 的流量密碼
+        - issue: 2022年6月號
+          title: 5.45mm
+        - issue: 2022年10月號
+          title: 世界謊言
+    - collection: 盒誌
+      entries:
+        - issue: 2021年《圍爐》
+          title: Zero.begin
+    - collection: Penana
+      entries:
+        - issue: 2022 暑假日更大挑戰
+          title: 全更組第三名《話說有人建了關住一億人的冷凍庫》
+    - collection: 紅出版
+      entries:
+        - issue: 2026
+          title: 《我踩着童年考上了名校》・香港書展新書
+
+footprints:
+  - 香港・堅尼地城海邊
+  - 香港・教員室門外
+  - 高雄・巷仔內
+  - 濟州・晴空之下
+  - 仙台・冬天
+  - 班夫・雪嶺
+  - 多倫多・通勤列車
+  - 紐約・逃回香港的機艙
+
 contact:
-  heading: 合作諮詢
-  intro: 如有合作、邀稿、插畫或其他想法，歡迎透過 Instagram 私訊聯絡，來訊時簡單說明來意即可。
-  ctaLabel: 到 Instagram 私訊
-  ctaUrl: "https://ig.me/m/scent._.moon"
-  note: 回覆需時，感謝你的耐心。
----
+  eyebrow: 來找我
+  heading: 合作與邀稿
+  intro: 合作、邀稿、插畫或其他想法，歡迎到 Instagram 私訊，或寫信到調香室。來訊簡單說明來意即可，回覆需時，感謝你的耐心。
+  dmLabel: Instagram 私訊
+  dmUrl: https://ig.me/m/scent._.moon
+  email: zerobegin08@gmail.com
+  emailLabel: 寫信到調香室
+  socials:
+    - label: Instagram
+      url: https://www.instagram.com/scent._.moon/
+    - label: Threads
+      url: https://www.threads.net/@scent._.moon
+    - label: Facebook
+      url: https://facebook.com/scentmoonhostel/
+    - label: Penana
+      url: https://www.penana.com/user/78808
+    - label: 舊網誌・傾榼閣
+      url: https://scentmoonpinnari.blogspot.com/
+    - label: 你是哪一瓶香
+      url: https://forms.gle/hYDHgvbBFsgiSJC27
+
+footer:
+  hours: 月出後營業・打烊時間不詳
+  copyright: 香淚月 Scentmoon
